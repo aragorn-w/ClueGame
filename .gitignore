@@ -5,6 +5,8 @@
 
 bin/
 
+gitlog.txt
+
 # Compiled class file
 *.class
 
