@@ -1,3 +1,13 @@
+/*
+ * Authors: Aragorn Wang, Anya Streit
+ * 
+ * Class: TestBoardCell
+ * 
+ * Purpose: This class is used to create a cell for the board. It is used to calculate the targets for the player to move to.
+ * 
+ * Responsibilites: TestBoardCell is responsible for representing a cell on the board and whether or not it is a room and whether it is occupied.
+ */
+
 package experiment;
 
 import java.util.HashSet;
@@ -38,7 +48,7 @@ public class TestBoardCell {
 		this.occupied = occupied;
 	}
 	
-	public boolean getOccupied() {
+	public boolean isOccupied() {
 		return occupied;
 	}
 }

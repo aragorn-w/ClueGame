@@ -1,37 +1,97 @@
-package experiment;
+/*
+ * Authors: Aragorn Wang, Anya Streit
+ * 
+ * Class: TestBoard
+ * 
+ * Purpose: This class is used to create a board for the game. It is used to calculate the targets for the player to move to.
+ * 
+ * Responsibilites: TestBoard is responsible for creating the board, noting each cell's adjacency list, and calculating the targets for the player to move to.
+ */
+
+ package experiment;
 
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
 public class TestBoard {
-	private ArrayList<ArrayList<TestBoardCell>> board = new ArrayList<ArrayList<TestBoardCell>>();
-	private Set<TestBoardCell> targets = new HashSet<>();
+	public final static int ROWS = 4;
+	public final static int COLS = 4;
 	
-	private int NUM_ROWS = 4;
-    private int NUM_COLS = 4;
+	private ArrayList<ArrayList<TestBoardCell>> grid = new ArrayList<ArrayList<TestBoardCell>>();
 	
+	private Set<TestBoardCell> targets;
+
+	private Set<TestBoardCell> visited;
+		
 	public TestBoard() {
 		super();
 
-	    for (int i = 0; i < NUM_ROWS; i++) {
-	        ArrayList<TestBoardCell> row = new ArrayList<>();
-	        for (int j = 0; j < NUM_COLS; j++) {
-	            row.add(new TestBoardCell(i, j));  // Assuming TestBoardCell has a constructor
+	    for (int row = 0; row < ROWS; row++) {
+	        ArrayList<TestBoardCell> gridRow = new ArrayList<>();
+	        for (int col = 0; col < COLS; col++) {
+	            gridRow.add(new TestBoardCell(row, col));  // Assuming TestBoardCell has a constructor
 	        }
-	        board.add(row);
+	        grid.add(gridRow);
 	    }
+
+		// Calculate each cell's adjacency list
+		for (int row = 0; row < ROWS; row++) {
+			for (int col = 0; col < COLS; col++) {
+				TestBoardCell cell = grid.get(row).get(col);
+				if (row > 0) {
+					cell.addAdjacency(grid.get(row - 1).get(col));
+				}
+				if (row < ROWS - 1) {
+					cell.addAdjacency(grid.get(row + 1).get(col));
+				}
+				if (col > 0) {
+					cell.addAdjacency(grid.get(row).get(col - 1));
+				}
+				if (col < COLS - 1) {
+					cell.addAdjacency(grid.get(row).get(col + 1));
+				}
+			}
+		}
 	}
-	
-	public void calcTargets(TestBoardCell startCell, int pathLength) {
-		
-	}
-	
+
 	public TestBoardCell getCell(int row, int col) {
-		return board.get(row).get(col);
+		return grid.get(row).get(col);
 	}
 	
 	public Set<TestBoardCell> getTargets() {
 		return targets;
+	}
+	
+	public void calcTargets(TestBoardCell startCell, int pathLength) {
+		visited = new HashSet<>();
+		targets = new HashSet<>();
+		visited.add(startCell);
+		findAllTargets(startCell, pathLength);
+	}
+
+	private void findAllTargets(TestBoardCell startCell, int pathLength) {
+		for (TestBoardCell adjCell: startCell.getAdjList()) {
+			if (startCell.isRoom()) {
+				targets.add(startCell);
+				return;
+			}
+
+			if (visited.contains(adjCell)) {
+				continue;
+			}
+			
+			visited.add(adjCell);
+			
+			if (!adjCell.isOccupied()) {
+				if (pathLength == 1) {
+					targets.add(adjCell);
+				} else {
+					findAllTargets(adjCell, pathLength - 1);
+				}
+			}
+
+			visited.remove(adjCell);
+		}
 	}
 }
