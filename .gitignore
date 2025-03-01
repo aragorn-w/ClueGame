@@ -32,3 +32,5 @@ gitlog.txt
 hs_err_pid*
 replay_pid*
 /bin1/
+
+.DS_Store
