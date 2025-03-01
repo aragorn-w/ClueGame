@@ -18,7 +18,7 @@ public class TestBoard {
 	public final static int ROWS = 4;
 	public final static int COLS = 4;
 	
-	private ArrayList<ArrayList<TestBoardCell>> grid = new ArrayList<ArrayList<TestBoardCell>>();
+	private ArrayList<ArrayList<TestBoardCell>> grid;
 	
 	private Set<TestBoardCell> targets;
 
@@ -26,6 +26,8 @@ public class TestBoard {
 		
 	public TestBoard() {
 		super();
+
+		grid = new ArrayList<ArrayList<TestBoardCell>>();
 
 	    for (int row = 0; row < ROWS; row++) {
 	        ArrayList<TestBoardCell> gridRow = new ArrayList<>();
@@ -72,6 +74,7 @@ public class TestBoard {
 
 	private void findAllTargets(TestBoardCell startCell, int pathLength) {
 		for (TestBoardCell adjCell: startCell.getAdjList()) {
+			// If the cell is a room, add it to the targets and return early since the player can't move through rooms
 			if (startCell.isRoom()) {
 				targets.add(startCell);
 				return;
@@ -83,6 +86,7 @@ public class TestBoard {
 			
 			visited.add(adjCell);
 			
+			// We only add the cell to the targets if it is not occupied since the player can't move to or through an occupied cell
 			if (!adjCell.isOccupied()) {
 				if (pathLength == 1) {
 					targets.add(adjCell);
