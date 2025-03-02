@@ -17,7 +17,7 @@ import clueGame.BoardCell;
 import clueGame.DoorDirection;
 import clueGame.Room;
 
-public class FileInitTests306 {
+public class FileInitTests {
 	// Constants that I will use to test whether the file was loaded correctly
 	public static final int LEGEND_SIZE = 11;
 	public static final int NUM_ROWS = 25;

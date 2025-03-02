@@ -15,8 +15,8 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class TestBoard {
-	public final static int ROWS = 4;
-	public final static int COLS = 4;
+	public final static int NUM_ROWS = 4;
+	public final static int NUM_COLS = 4;
 	
 	private ArrayList<ArrayList<TestBoardCell>> grid;
 	
@@ -29,28 +29,28 @@ public class TestBoard {
 
 		grid = new ArrayList<ArrayList<TestBoardCell>>();
 
-	    for (int row = 0; row < ROWS; row++) {
+	    for (int row = 0; row < NUM_ROWS; row++) {
 	        ArrayList<TestBoardCell> gridRow = new ArrayList<>();
-	        for (int col = 0; col < COLS; col++) {
+	        for (int col = 0; col < NUM_COLS; col++) {
 	            gridRow.add(new TestBoardCell(row, col));  // Assuming TestBoardCell has a constructor
 	        }
 	        grid.add(gridRow);
 	    }
 
 		// Calculate each cell's adjacency list
-		for (int row = 0; row < ROWS; row++) {
-			for (int col = 0; col < COLS; col++) {
+		for (int row = 0; row < NUM_ROWS; row++) {
+			for (int col = 0; col < NUM_COLS; col++) {
 				TestBoardCell cell = grid.get(row).get(col);
 				if (row > 0) {
 					cell.addAdjacency(grid.get(row - 1).get(col));
 				}
-				if (row < ROWS - 1) {
+				if (row < NUM_ROWS - 1) {
 					cell.addAdjacency(grid.get(row + 1).get(col));
 				}
 				if (col > 0) {
 					cell.addAdjacency(grid.get(row).get(col - 1));
 				}
-				if (col < COLS - 1) {
+				if (col < NUM_COLS - 1) {
 					cell.addAdjacency(grid.get(row).get(col + 1));
 				}
 			}
