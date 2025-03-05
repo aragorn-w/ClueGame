@@ -14,7 +14,9 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class TestBoardCell {
+    @SuppressWarnings("unused")
 	private final int row;
+	@SuppressWarnings("unused")
 	private final int col;
 	
 	private final Set<TestBoardCell> adjCells = new HashSet<>();

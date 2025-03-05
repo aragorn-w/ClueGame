@@ -37,6 +37,14 @@ public class BoardCell {
 		adjList = new HashSet<>();
 	}
 
+	public int getRow() {
+		return row;
+	}
+
+	public int getCol() {
+		return col;
+	}
+
 	public char getInitial() {
 		return initial;
 	}
