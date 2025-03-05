@@ -1,9 +1,9 @@
 /*
  * Class: Board
  * 
- * Purpose: 
+ * Purpose: The Board class is a singleton that represents the game board.
  * 
- * Responsibilities: 
+ * Responsibilities: The Board class is responsible for loading the layout and setup config files, initializing the board, and storing the grid of cells and room map.
  * 
  * Authors: Aragorn Wang, Anya Streit
  */
@@ -97,6 +97,7 @@ public class Board {
 					// if room is null, then the initial is not a valid room
 					Room room = roomMap.get(initial);
 					if (room == null) {
+						// if initial is not a valid room, then the cell is invalid
 						throw new Exception("Invalid room " + initial + " in layout config file.");
 					}
 					
@@ -121,6 +122,7 @@ public class Board {
 								if (roomMap.containsKey(special)) {
 									cell.setSecretPassage(special);
 								} else {
+									// if special is not a valid room, then the cell is invalid
 									throw new Exception("Invalid cell " + marker + " in layout config file.");
 								}
 							}
@@ -132,6 +134,7 @@ public class Board {
 				}
 
 				if (oldNumCols != -1 && oldNumCols != numCols) {
+					// if the number of columns is inconsistent, then the layout is invalid
 					throw new Exception("Inconsistent number of columns in layout config file found at row " + rowIndex + ".");
 				}
 				oldNumCols = numCols;

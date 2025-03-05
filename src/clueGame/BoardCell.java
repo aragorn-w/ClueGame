@@ -1,9 +1,9 @@
 /*
  * Class: BoardCell
  * 
- * Purpose: 
+ * Purpose: The BoardCell class represents a single cell on the game board. It contains information about the cell's
  * 
- * Responsibilities: 
+ * Responsibilities: The BoardCell class is responsible for storing information about a single cell on the game board, including its row and column, the initial of the room it is in, whether it is a doorway, the direction of the doorway, whether it is a room label, whether it is a room center, the secret passage in the room, and the cells adjacent to it. It is also responsible for providing access to this information.
  * 
  * Authors: Aragorn Wang, Anya Streit
  */

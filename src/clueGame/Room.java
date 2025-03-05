@@ -1,9 +1,9 @@
 /*
  * Class: Room
  * 
- * Purpose: 
+ * Purpose: The Room class is used to store information about a room in the Clue game.
  * 
- * Responsibilities: 
+ * Responsibilities: The Room class is responsible for storing the name of the room, the center cell of the room, and the label cell of the room.
  * 
  * Authors: Aragorn Wang, Anya Streit
  */
