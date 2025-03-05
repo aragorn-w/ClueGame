@@ -14,10 +14,10 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class TestBoardCell {
-	private int row;
-	private int col;
+	private final int row;
+	private final int col;
 	
-	private Set<TestBoardCell> adjCells = new HashSet<>();
+	private final Set<TestBoardCell> adjCells = new HashSet<>();
 	
 	private boolean isRoom = false;
 	private boolean occupied = false;

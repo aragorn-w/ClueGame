@@ -18,7 +18,7 @@ The locations for a standard room cell, room label cell, room center cell, and r
 ======ExceptionTests======
 
 testBadColumns:
-Rightmost column has simply been deleted.
+Second row is missing its last column.
 
 testBadRoom:
 ClueLayoutBadRoom.csv has a rectangular room of initial "J", which does not exist in the legend.

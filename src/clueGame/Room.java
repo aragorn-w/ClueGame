@@ -11,16 +11,14 @@
 package clueGame;
 
 public class Room {
-	private String name;
+	private final String name;
 
 	private BoardCell centerCell;
 	private BoardCell labelCell;
 
-	public Room(String name, BoardCell centerCell, BoardCell labelCell) {
+	public Room(String name) {
 		super();
 		this.name = name;
-		this.centerCell = centerCell;
-		this.labelCell = labelCell;
 	}
 
 	public String getName() {
@@ -31,7 +29,15 @@ public class Room {
 		return centerCell;
 	}
 
+	public void setCenterCell(BoardCell centerCell) {
+		this.centerCell = centerCell;
+	}
+
 	public BoardCell getLabelCell() {
 		return labelCell;
+	}
+
+	public void setLabelCell(BoardCell labelCell) {
+		this.labelCell = labelCell;
 	}
 }

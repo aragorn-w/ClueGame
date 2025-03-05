@@ -18,7 +18,7 @@ public class TestBoard {
 	public final static int NUM_ROWS = 4;
 	public final static int NUM_COLS = 4;
 	
-	private ArrayList<ArrayList<TestBoardCell>> grid;
+	private final ArrayList<ArrayList<TestBoardCell>> grid;
 	
 	private Set<TestBoardCell> targets;
 
@@ -27,7 +27,7 @@ public class TestBoard {
 	public TestBoard() {
 		super();
 
-		grid = new ArrayList<ArrayList<TestBoardCell>>();
+		grid = new ArrayList<>();
 
 	    for (int row = 0; row < NUM_ROWS; row++) {
 	        ArrayList<TestBoardCell> gridRow = new ArrayList<>();

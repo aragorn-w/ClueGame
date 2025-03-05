@@ -40,7 +40,7 @@ public class FileInitTests {
 		// Board is singleton, get the only instance
 		board = Board.getInstance();
 		// set the file names to use my config files
-		board.setConfigFiles("ClueLayout.csv", "ClueSetup.txt");
+		board.setConfigFiles("data/ClueLayout.csv", "data/ClueSetup.txt");
 		// Initialize will load BOTH config files
 		board.initialize();
 	}
@@ -159,7 +159,6 @@ public class FileInitTests {
 		assertEquals( room.getName(), "Unused" ) ;
 		assertFalse( cell.isRoomCenter() );
 		assertFalse( cell.isLabel() );
-		
 	}
 
 }
