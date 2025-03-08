@@ -14,8 +14,10 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.Set;
 
 public class Board {
 	private static Board theInstance;
@@ -181,5 +183,19 @@ public class Board {
 	public void setConfigFiles(String layoutConfigFile, String setupConfigFile) {
 		this.layoutConfigFile = layoutConfigFile;
 		this.setupConfigFile = setupConfigFile;
+	}
+
+	public Set<BoardCell> getAdjList(int i, int j) {
+		return new HashSet<BoardCell>();
+	}
+
+	public void calcTargets(BoardCell cell, int i) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public Set<BoardCell> getTargets() {
+		// TODO Auto-generated method stub
+		return new HashSet<BoardCell>();
 	}
 }

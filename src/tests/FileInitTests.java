@@ -69,7 +69,7 @@ public class FileInitTests {
 
 	// Test a doorway in each direction (RIGHT/LEFT/UP/DOWN), plus
 	// two cells that are not a doorway.
-	// These cells are dark yellow on the planning spreadsheet
+	// These cells are white on the planning spreadsheet
 	@Test
 	public void fourDoorDirections() {
 		BoardCell cell = board.getCell(18, 6);
@@ -109,6 +109,7 @@ public class FileInitTests {
 	}
 
 	// Test a few room cells to ensure the room initial is correct.
+	// These cells are gray on the planning spreadsheet
 	@Test
 	public void testRooms() {
 		// just test a standard room location
