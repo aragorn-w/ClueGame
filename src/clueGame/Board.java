@@ -185,11 +185,11 @@ public class Board {
 		this.setupConfigFile = setupConfigFile;
 	}
 
-	public Set<BoardCell> getAdjList(int i, int j) {
+	public Set<BoardCell> getAdjList(int row, int col) {
 		return new HashSet<BoardCell>();
 	}
 
-	public void calcTargets(BoardCell cell, int i) {
+	public void calcTargets(BoardCell cell, int roll) {
 		// TODO Auto-generated method stub
 		
 	}

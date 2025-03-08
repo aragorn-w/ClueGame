@@ -89,7 +89,7 @@ public class BoardCell {
 		adjList.add(cell);
 	}
 
-	public void setOccupied(boolean b) {
+	public void setOccupied(boolean isOccupied) {
 		// TODO Auto-generated method stub
 		
 	}
