@@ -30,8 +30,7 @@ public class BoardAdjTargetTest306 {
 	// Ensure that player does not move around within room
 	// These cells are LIGHT ORANGE on the planning spreadsheet
 	@Test
-	public void testAdjacenciesRooms()
-	{
+	public void testAdjacenciesRooms() {
 		// we want to test a couple of different rooms.
 		// First, the study that only has a single door but a secret room
 		Set<BoardCell> testList = board.getAdjList(2, 2);
@@ -55,8 +54,7 @@ public class BoardAdjTargetTest306 {
 	// Ensure door locations include their rooms and also additional walkways
 	// These cells are LIGHT ORANGE on the planning spreadsheet
 	@Test
-	public void testAdjacencyDoor()
-	{
+	public void testAdjacencyDoor() {
 		Set<BoardCell> testList = board.getAdjList(11, 1);
 		assertEquals(2, testList.size());
 		assertTrue(testList.contains(board.getCell(14, 2)));
@@ -79,8 +77,7 @@ public class BoardAdjTargetTest306 {
 	// Test a variety of walkway scenarios
 	// These tests are Dark Orange on the planning spreadsheet
 	@Test
-	public void testAdjacencyWalkways()
-	{
+	public void testAdjacencyWalkways() {
 		// Test on bottom edge of board, just one walkway piece
 		Set<BoardCell> testList = board.getAdjList(24, 14);
 		assertEquals(1, testList.size());
