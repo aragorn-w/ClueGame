@@ -34,8 +34,7 @@ public class BoardAdjTargetTest {
 	// this includes test cases for normal rooms, rooms with multiple doors, and rooms with secret passages
 	// These cells are light orange on the planning spreadsheet
 	@Test
-	public void testAdjacenciesRooms()
-	{
+	public void testAdjacenciesRooms() {
 		// test room with two doorways and secret passage
 		Set<BoardCell> testList = board.getAdjList(18, 2);
 		assertEquals(3, testList.size());
@@ -64,8 +63,7 @@ public class BoardAdjTargetTest {
 	// Test door locations include room location and walkways
 	// These cells are dark orange on the planning spreadsheet
 	@Test
-	public void testAdjacencyDoor()
-	{
+	public void testAdjacencyDoor() {
 		// doorway with 4 adjacencies
 		Set<BoardCell> testList = board.getAdjList(2, 10);
 		assertEquals(4, testList.size());
@@ -93,8 +91,7 @@ public class BoardAdjTargetTest {
 	// Test walkway adjacencies with a few edge cases
 	// These cells are dark blue on the planning spreadsheet
 	@Test
-	public void testAdjacencyWalkways()
-	{
+	public void testAdjacencyWalkways() {
 		// test bottom of board, 1 adjacency
 		Set<BoardCell> testList = board.getAdjList(19, 20);
 		assertEquals(1, testList.size());
