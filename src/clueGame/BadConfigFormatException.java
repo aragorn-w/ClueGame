@@ -11,7 +11,9 @@
 package clueGame;
 
 public class BadConfigFormatException extends Exception {
-    public BadConfigFormatException() {
+    private static final long serialVersionUID = -8436274110449011956L;
+
+	public BadConfigFormatException() {
         super("Either the setup or layout config file is invalid.");
     }
 

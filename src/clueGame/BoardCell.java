@@ -20,21 +20,23 @@ public class BoardCell {
 	private final char initial;
 
 	private DoorDirection doorDirection;
-
+	
+	private Room room;
 	private boolean roomLabel;
 	private boolean roomCenter;
-
 	private char secretPassage;
 
 	private final Set<BoardCell> adjList;
+	
+	private boolean isRoom = false;
+	private boolean isOccupied = false;
 
 	public BoardCell(int row, int col, char initial) throws BadConfigFormatException {
 		super();
 		this.row = row;
 		this.col = col;
 		this.initial = initial;
-
-		adjList = new HashSet<>();
+		this.adjList = new HashSet<>();
 	}
 
 	public int getRow() {
@@ -47,6 +49,14 @@ public class BoardCell {
 
 	public char getInitial() {
 		return initial;
+	}
+	
+	public Room getRoom() {
+		return room;
+	}
+	
+	public void setRoom(Room room) {
+		this.room = room;
 	}
 
 	public boolean isDoorway() {
@@ -76,6 +86,10 @@ public class BoardCell {
 	public void setIsRoomCenter(boolean isRoomCenter) {
 		roomCenter = isRoomCenter;
 	}
+	
+	public boolean isSecretPassage() {
+		return secretPassage != 0;
+	}
 
 	public char getSecretPassage() {
 		return secretPassage;
@@ -88,9 +102,24 @@ public class BoardCell {
 	public void addAdj(BoardCell cell) {
 		adjList.add(cell);
 	}
+	
+	public Set<BoardCell> getAdjList() {
+		return adjList;
+	}
+	
+	public boolean isRoom() {
+		return isRoom;
+	}
+	
+	public void setIsRoom(boolean isRoom) {
+		this.isRoom = isRoom;
+	}
+	
+	public boolean isOccupied() {
+		return isOccupied;
+	}
 
 	public void setOccupied(boolean isOccupied) {
-		// TODO Auto-generated method stub
-		
+		this.isOccupied = isOccupied;
 	}
 }

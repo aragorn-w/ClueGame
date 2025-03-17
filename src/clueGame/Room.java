@@ -11,6 +11,8 @@
 package clueGame;
 
 public class Room {
+	public static Room WALKWAY;
+	
 	private final String name;
 
 	private BoardCell centerCell;
@@ -19,6 +21,10 @@ public class Room {
 	public Room(String name) {
 		super();
 		this.name = name;
+		
+		if (name.equals("Walkway")) {
+			WALKWAY = this;
+		}
 	}
 
 	public String getName() {
