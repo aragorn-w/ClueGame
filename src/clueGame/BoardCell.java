@@ -21,15 +21,15 @@ public class BoardCell {
 
 	private DoorDirection doorDirection;
 	
-	private Room room;
-	private boolean roomLabel;
-	private boolean roomCenter;
+	private boolean isRoomLabel;
+	private boolean isRoomCenter;
 	private char secretPassage;
 
 	private final Set<BoardCell> adjList;
 	
-	private boolean isRoom = false;
-	private boolean isOccupied = false;
+	private boolean isWalkway;
+	private boolean isRoom;
+	private boolean isOccupied;
 
 	public BoardCell(int row, int col, char initial) throws BadConfigFormatException {
 		super();
@@ -50,14 +50,6 @@ public class BoardCell {
 	public char getInitial() {
 		return initial;
 	}
-	
-	public Room getRoom() {
-		return room;
-	}
-	
-	public void setRoom(Room room) {
-		this.room = room;
-	}
 
 	public boolean isDoorway() {
 		return doorDirection != null;
@@ -72,19 +64,19 @@ public class BoardCell {
 	}
 
 	public boolean isLabel() {
-		return roomLabel;
+		return isRoomLabel;
 	}
 
 	public void setIsLabel(boolean isRoomLabel) {
-		roomLabel = isRoomLabel;
+		this.isRoomLabel = isRoomLabel;
 	}
 
 	public boolean isRoomCenter() {
-		return roomCenter;
+		return isRoomCenter;
 	}
 
 	public void setIsRoomCenter(boolean isRoomCenter) {
-		roomCenter = isRoomCenter;
+		this.isRoomCenter = isRoomCenter;
 	}
 	
 	public boolean isSecretPassage() {
@@ -105,6 +97,14 @@ public class BoardCell {
 	
 	public Set<BoardCell> getAdjList() {
 		return adjList;
+	}
+	
+	public boolean isWalkway() {
+		return isWalkway;
+	}
+	
+	public void setIsWalkway(boolean isWalkway) {
+		this.isWalkway = isWalkway;
 	}
 	
 	public boolean isRoom() {

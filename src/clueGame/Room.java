@@ -10,8 +10,9 @@
 
 package clueGame;
 
-public class Room {
-	public static Room WALKWAY;
+public class Room {	
+	public static final char LABEL_MARKER = '#';
+	public static final char CENTER_MARKER = '*';
 	
 	private final String name;
 
@@ -21,10 +22,6 @@ public class Room {
 	public Room(String name) {
 		super();
 		this.name = name;
-		
-		if (name.equals("Walkway")) {
-			WALKWAY = this;
-		}
 	}
 
 	public String getName() {

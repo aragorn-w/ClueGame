@@ -114,7 +114,7 @@ public class BoardAdjTargetTest {
 		assertTrue(testList.contains(board.getCell(17, 2)));
 
 		// test next to empty space
-		testList = board.getAdjList(9,11);
+		testList = board.getAdjList(9, 11);
 		assertEquals(3, testList.size());
 		assertTrue(testList.contains(board.getCell(8, 10)));
 		assertTrue(testList.contains(board.getCell(10, 10)));
