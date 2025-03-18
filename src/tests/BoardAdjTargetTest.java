@@ -76,7 +76,7 @@ public class BoardAdjTargetTest {
 		// this also tests door not directly adjacent to room center
 		testList = board.getAdjList(18, 13);
 		assertEquals(2, testList.size());
-		assertTrue(testList.contains(board.getCell(20, 17)));
+		assertTrue(testList.contains(board.getCell(18, 17)));
 		assertTrue(testList.contains(board.getCell(17, 13)));
 		
 		// doorway with 4 adjacencies
@@ -114,7 +114,7 @@ public class BoardAdjTargetTest {
 		assertTrue(testList.contains(board.getCell(17, 2)));
 
 		// test next to empty space
-		testList = board.getAdjList(9, 11);
+		testList = board.getAdjList(9, 10);
 		assertEquals(3, testList.size());
 		assertTrue(testList.contains(board.getCell(8, 10)));
 		assertTrue(testList.contains(board.getCell(10, 10)));

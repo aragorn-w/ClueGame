@@ -121,8 +121,6 @@ public class Board {
 						
 						BoardCell cell = new BoardCell(rowIndex, colIndex, initial);
 						
-						cell.setOccupied(false);
-						
 						if (initial == walkwayInitial) {
 							cell.setIsWalkway(true);
 							cell.setIsRoom(false);
@@ -133,6 +131,8 @@ public class Board {
 							cell.setIsWalkway(false);
 							cell.setIsRoom(true);
 						}
+						
+						cell.setOccupied(false);
 						
 						if (marker.length() == 2) {
 							char special = marker.charAt(1);
@@ -189,8 +189,6 @@ public class Board {
 		} catch (Exception exception) {
 			throw new FileNotFoundException();
 		}
-		
-		System.out.println("Rows: " + numRows + ", Columns: " + numCols);
 	}
 	
 	private void calcAdjLists() {
@@ -301,7 +299,7 @@ public class Board {
 		findAllTargets(cell, roll);
 	}
 	
-	private void findAllTargets(BoardCell cell, int roll) {			
+	private void findAllTargets(BoardCell cell, int roll) {
 		for (BoardCell adjCell: cell.getAdjList()) {
 			// If the cell is a room, add it to the targets and return early since the player can't move through rooms
 			if (cell.isRoom()) {
