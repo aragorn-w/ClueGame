@@ -1,2 +1,11 @@
 We added forever-looping elevator music in the background.
 
+We added the modernized version of the Windows XP desktop wallpaper as the board's background.
+
+We also made it possible (using private static finals, not magic numbers) to adjust the opacity of both the board cells (i.e. their rectangle fill) and the backgroun image's.
+
+We added a sound effect (Mario jump sound effect) that plays every time the player travels to a valid cell.
+
+We also created a playable .jar file.
+
+With these changes, especially with the good software engineering principles and practices we maintained in implementing the surprisingly complex audio behavior, we believe this extra credit deserves the full 20 bonus points possible.
