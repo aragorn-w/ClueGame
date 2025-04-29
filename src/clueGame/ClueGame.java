@@ -234,13 +234,12 @@ public class ClueGame extends JFrame {
 		);
 
 		if (result == JOptionPane.OK_OPTION) {
-			// Solution submitted = new Solution(
-			// 	(Card) room.getSelectedItem(),
-			// 	(Card) person.getSelectedItem(),
-			// 	(Card) weapon.getSelectedItem()
-			// );
-			// this.handleAccusation(board.checkAccusation(submitted) ? 1 : 0);
-			this.handleAccusation(1);
+			Solution submitted = new Solution(
+				(Card) room.getSelectedItem(),
+				(Card) person.getSelectedItem(),
+				(Card) weapon.getSelectedItem()
+			);
+			this.handleAccusation(board.checkAccusation(submitted) ? 1 : 0);
 		}
 	}
 	
