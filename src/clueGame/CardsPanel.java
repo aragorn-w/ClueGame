@@ -110,7 +110,7 @@ public class CardsPanel extends JPanel {
 		cardText.setEditable(false);
 		cardText.setBorder(BorderFactory.createLineBorder(Color.BLACK));
 		for (Player player : Board.getInstance().getPlayers()) {
-			if (player.getSeenCards().contains(card)) {
+			if (player.getHand().contains(card)) {
 				cardText.setBackground(player.getColor());
 				break;
 			}
