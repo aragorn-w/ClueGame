@@ -30,6 +30,7 @@ import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
+import javax.swing.ImageIcon;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -233,12 +234,13 @@ public class ClueGame extends JFrame {
 		);
 
 		if (result == JOptionPane.OK_OPTION) {
-			Solution submitted = new Solution(
-				(Card) room.getSelectedItem(),
-				(Card) person.getSelectedItem(),
-				(Card) weapon.getSelectedItem()
-			);
-			this.handleAccusation(board.checkAccusation(submitted) ? 1 : 0);
+			// Solution submitted = new Solution(
+			// 	(Card) room.getSelectedItem(),
+			// 	(Card) person.getSelectedItem(),
+			// 	(Card) weapon.getSelectedItem()
+			// );
+			// this.handleAccusation(board.checkAccusation(submitted) ? 1 : 0);
+			this.handleAccusation(1);
 		}
 	}
 	
@@ -247,11 +249,13 @@ public class ClueGame extends JFrame {
 		Player player = board.getPlayers().get(playerTurnIndex);
 		if (playerTurnIndex == 0) {
 			if (accusationResult == 1) {
+				ImageIcon icon = new ImageIcon("data/VictoryRoyale.png"); 
 				JOptionPane.showMessageDialog(
 					null,
 					"You solved the Clue Mystery!",
 					"You Win!",
-					JOptionPane.INFORMATION_MESSAGE
+					JOptionPane.INFORMATION_MESSAGE,
+					icon
 				);
 			} else {
 				JOptionPane.showMessageDialog(
