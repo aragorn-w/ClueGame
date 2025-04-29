@@ -6,7 +6,7 @@ We also made it possible (using private static finals, not magic numbers) to adj
 
 We added a sound effect (Mario jump sound effect) that plays every time the player travels to a valid cell.
 
-We added an image to be displayed when the player wins the game by making a correct accusation.
+We added an image (Fortnite victory royale image) to be displayed when the player wins the game by making a correct accusation.
 
 We also created a playable .jar file.
 
